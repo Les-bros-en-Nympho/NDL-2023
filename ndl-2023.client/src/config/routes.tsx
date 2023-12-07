@@ -1,36 +1,40 @@
 import { Root } from '../layouts/Root';
 import { Home } from '../pages/Home';
-import { RouteObject } from 'react-router-dom';
+import { Navigate, RouteObject } from 'react-router-dom';
 
 export const routes = [
     {
-        path: '/',
+        path: '/:locale',
         element: <Root />,
         children: [
             {
-                path: '/',
+                path: '', // Le chemin vide ici correspond à '/:locale', donc cela pointe vers '/:locale'
                 element: <Home />
             },
             {
-                path: '/training',
-                element: ""
+                path: 'training', // Chemin relatif par rapport à '/:locale'
+                element: "" // Assurez-vous de remplir l'élément correspondant
             },
             {
-                path: '/account',
-                element: ""
+                path: 'account', // Chemin relatif par rapport à '/:locale'
+                element: "" // Assurez-vous de remplir l'élément correspondant
             },
             {
-                path: '/help',
-                element: ""
+                path: 'help', // Chemin relatif par rapport à '/:locale'
+                element: "" // Assurez-vous de remplir l'élément correspondant
             },
             {
-                path: '/privacy',
-                element: ""
+                path: 'privacy', // Chemin relatif par rapport à '/:locale'
+                element: "" // Assurez-vous de remplir l'élément correspondant
             },
             {
-                path: '/login',
-                element: ""
+                path: 'login', // Chemin relatif par rapport à '/:locale'
+                element: "" // Assurez-vous de remplir l'élément correspondant
             }
         ]
     },
-] as RouteObject;
+    {
+        path: '*', // Route par défaut pour les chemins inconnus
+        element: <Navigate to="/404" />
+    }
+] as RouteObject[];

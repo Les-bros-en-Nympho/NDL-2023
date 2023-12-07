@@ -7,5 +7,5 @@ namespace NDL_2023.Server.Services.Interfaces;
 
 public interface ITrueOrFalseService
 {
-    public TrueOrFalse? GetRandomTrueOrFalse(Guid? lastTrueOrFalseId);
+    public string? GetRandomTrueOrFalse(Guid? lastTrueOrFalseId);
 }

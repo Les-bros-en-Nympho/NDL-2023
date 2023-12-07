@@ -13,19 +13,18 @@ public class TrueOrFalseService: ITrueOrFalseService
         _context = context;
     }
 
-    public TrueOrFalse? GetRandomTrueOrFalse(Guid? lastTrueOrFalseId)
+    public string? GetRandomTrueOrFalse(Guid? lastTrueOrFalseId)
     {
-        TrueOrFalse?[] tableAsArray = _context.TrueOrFalses.ToArray();
-        int nb = tableAsArray.Length;
+        int nb = _context.TrueOrFalses.Count();
 
         TrueOrFalse? randomElement = null;
         bool success = false;
         while (success)
         {
-            randomElement = tableAsArray[new Random().Next(1, nb)];
+            randomElement = _context.TrueOrFalses.ElementAt(new Random().Next(1, nb));
             success = lastTrueOrFalseId is null || randomElement.id.Equals(lastTrueOrFalseId);
         }
 
-        return randomElement;
+        return randomElement.statement;
     }
 }

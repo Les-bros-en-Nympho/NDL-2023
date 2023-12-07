@@ -1,13 +1,14 @@
 import { Root } from '../layouts/Root';
+import { Home } from '../pages/Home';
 
 export const routes = [
     {
         path: '/',
-        element: Root,
+        element: <Root />,
         children: [
             {
                 path: '/',
-                element: ""
+                element: <Home />
             },
             {
                 path: '/training',

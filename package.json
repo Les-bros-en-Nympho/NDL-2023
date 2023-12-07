@@ -1,9 +1,0 @@
-{
-  "dependencies": {
-    "@emotion/react": "^11.11.1",
-    "i18next": "^23.7.8",
-    "react-awesome-reveal": "^4.2.7",
-    "react-i18next": "^13.5.0",
-    "react-router-dom": "^6.20.1"
-  }
-}

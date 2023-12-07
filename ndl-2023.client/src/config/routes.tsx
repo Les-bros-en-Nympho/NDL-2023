@@ -1,36 +1,45 @@
 import { Root } from '../layouts/Root';
 import { Home } from '../pages/Home';
-import { RouteObject } from 'react-router-dom';
+import { Navigate, RouteObject } from 'react-router-dom';
 
 export const routes = [
     {
         path: '/',
-        element: <Root />,
         children: [
             {
+                path: '/:locale',
+                element: <Root />,
+                children: [
+                    {
+                        path: '',
+                        element: <Home />
+                    },
+                    {
+                        path: 'training',
+                        element: <Home />
+                    },
+                    {
+                        path: 'account',
+                        element: <Home />
+                    },
+                    {
+                        path: 'help',
+                        element: <Home />
+                    },
+                    {
+                        path: 'privacy',
+                        element: <Home />
+                    },
+                    {
+                        path: 'login',
+                        element: <Home />
+                    }
+                ]
+            },
+            {
                 path: '/',
-                element: <Home />
-            },
-            {
-                path: '/training',
-                element: ""
-            },
-            {
-                path: '/account',
-                element: ""
-            },
-            {
-                path: '/help',
-                element: ""
-            },
-            {
-                path: '/privacy',
-                element: ""
-            },
-            {
-                path: '/login',
-                element: ""
+                element: <Navigate to="/en" />
             }
         ]
-    },
-] as RouteObject;
+    }
+] as RouteObject[];

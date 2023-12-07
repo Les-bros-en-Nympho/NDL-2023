@@ -1,9 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import './colors.scss';
+@import './variables.scss';
+
 * {
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
-    background-color: red;
+    background-color: $background;
+    color: $text;
+}
+
+header, footer, section {
+    padding: 0px $center-margin;
 }

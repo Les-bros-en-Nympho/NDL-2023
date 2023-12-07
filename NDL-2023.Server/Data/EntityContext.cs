@@ -20,7 +20,7 @@ namespace NDL_2023.Server.Data
             // connect to postgres with connection string from app settings
             options.UseNpgsql(Configuration.GetConnectionString("DatabaseConnection"));
         }
-        public DbSet<TrueOrFalse> questions { get; set; }
+        public DbSet<TrueOrFalse> trueOrFalses { get; set; }
 
         public DbSet<User> users { get; set; }
 

@@ -4,7 +4,7 @@ import en from './locales/en.json'
 
 i18next.init({
     debug: true,
-    fallbackLng: 'fr',
+    fallbackLng: ['fr', 'en'],
     resources: {
         fr: { translation: fr },
         en: { translation: en },

@@ -1,0 +1,6 @@
+@NDL_2023.Server_HostAddress = http://localhost:5043
+
+GET {{NDL_2023.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

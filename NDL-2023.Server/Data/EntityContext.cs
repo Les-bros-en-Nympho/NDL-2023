@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using NDL_2023.Server.Data.Tables;
 
 namespace NDL_2023.Server.Data
@@ -6,6 +7,8 @@ namespace NDL_2023.Server.Data
     public class EntityContext : DbContext
     {
         protected readonly IConfiguration Configuration;
+        
+        public DbSet<User> Users { get; set; }
 
         public EntityContext(IConfiguration configuration)
         {

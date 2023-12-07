@@ -33,4 +33,4 @@ export const routes = [
             }
         ]
     },
-] as RouteObject;
+] as RouteObject[];

@@ -1,9 +1,9 @@
-import React from 'react';
+import { Root } from '../layouts/Root';
 
-const routes = [
+export const routes = [
     {
         path: '/',
-        element: <Root />,
+        element: Root,
         children: [
             {
                 path: '/',
@@ -31,6 +31,4 @@ const routes = [
             }
         ]
     },
-]
-
-export default routes;
+];

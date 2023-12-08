@@ -1,6 +1,6 @@
 import i18n from '../../i18n';
 import '../../styles/login/login.scss'
-import { Fade } from 'react-awesome-reveal';
+import { Fade, Zoom } from 'react-awesome-reveal';
 import { Link } from 'react-router-dom';
 
 export const Login = () => {
@@ -9,7 +9,7 @@ export const Login = () => {
 
     return (
         <section id="login">
-            <Fade duration={200}>
+            <Zoom duration={200}>
                 <fieldset>
                     <legend>{t('login_title')}</legend>
 
@@ -28,7 +28,7 @@ export const Login = () => {
                         {t('login_register')} <Link to={`/${currentLocale}/register`}>{t('login_register_link')}</Link>
                     </p>
                 </fieldset>
-            </Fade>
+            </Zoom>
         </section>
     )
 };

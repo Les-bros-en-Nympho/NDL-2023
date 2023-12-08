@@ -1,16 +1,15 @@
 import { API } from "../../services/API"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 
 export const QuizzComponent = () => {
 
-    let statement: string | null = "";
+    const [statement, setStatement] = useState("");
 
     function ReloadRandom(){
-        let json = null
         API.getInstance().get("/TrueOrFalse/random").then((response) => {
-            json = response;
+            if(response != null)
+                setStatement(response['question']);
         });
-        statement = json;
     }
     const onComponentMount = () => {
         ReloadRandom();
@@ -20,9 +19,10 @@ export const QuizzComponent = () => {
         onComponentMount();
     }, []);
 
-    function Guess(response: string){
+    function Guess(responseP: string){
         let json = null;
-        API.getInstance().get(`/TrueOrFalse/guess/${response}`).then((response) => {
+        API.getInstance().get(`/TrueOrFalse/guess/${responseP}`).then((response) => {
+            console.log(response);
            json = response;
         });
         ReloadRandom();
@@ -44,7 +44,9 @@ export const QuizzComponent = () => {
                     <h1>FAUX</h1>
                 </div>
                 <div className="statement">
+                    <p>
                     {statement}
+                    </p>
                 </div>
                 <div className="button button-true" onClick={GuessAsTrue}>
                     <h1>VRAI</h1>

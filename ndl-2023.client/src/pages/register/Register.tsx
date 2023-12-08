@@ -1,7 +1,7 @@
 import i18n from '../../i18n';
 import '../../styles/register/register.scss'
 import { Fade, Zoom } from 'react-awesome-reveal';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { API } from '../../services/API';
 import toast, { Toaster } from 'react-hot-toast';
 import { useState } from 'react';
@@ -10,6 +10,7 @@ export const Register = () => {
     const { t } = i18n;
     const currentLocale = i18n.language;
     const api = API.getInstance();
+    const navigate = useNavigate();
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [cpassword, setCPassword] = useState('');
@@ -31,6 +32,7 @@ export const Register = () => {
                     toast.error(response.message);
                 } else {
                     toast.success(t('register_success'));
+                    navigate(`/${currentLocale}/login`);
                 }
             });
         } catch (error) {

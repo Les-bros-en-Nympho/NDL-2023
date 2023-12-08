@@ -14,9 +14,9 @@ export const Root = () => {
     return (
         <main>
             <Header />
-            <section>
+            <main>
                 <Outlet />
-            </section>
+            </main>
             <Footer />
         </main>
     )

@@ -1,6 +1,7 @@
 import { Root } from '../layouts/Root';
-import { Home } from '../pages/Home';
+import { Home } from '../pages/home/Home';
 import { Navigate, RouteObject } from 'react-router-dom';
+import { Login } from '../pages/login/Login';
 
 export const routes = [
     {
@@ -32,7 +33,7 @@ export const routes = [
                     },
                     {
                         path: 'login',
-                        element: <Home />
+                        element: <Login />
                     }
                 ]
             },

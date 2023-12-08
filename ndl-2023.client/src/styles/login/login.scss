@@ -105,3 +105,17 @@ section#login {
         }
     }
 }
+
+@media (max-width: 1450px) {
+    section#login {
+        position: relative;
+        display: block;
+
+        fieldset {
+            position: relative;
+            left: 50%;
+            margin-top: 12%;
+            transform: translateX(-50%);
+        }
+    }
+}

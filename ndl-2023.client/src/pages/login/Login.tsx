@@ -14,13 +14,11 @@ export const Login = () => {
     const navigate = useNavigate();
     const api = API.getInstance();
     const localStorage = LOCALSTORAGE.getInstance();
-    const [loading, setLoading] = useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const login = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        setLoading(true);
         try {
             api.post('/Auth/Login', {
                 email,
@@ -34,10 +32,8 @@ export const Login = () => {
                     navigate(`/${currentLocale}/`);
                 }
             });
-            setLoading(false);
         } catch (error) {
-            // toast.error(t('register_error'));
-            setLoading(false);
+            toast.error(t('register_error'));
         }
     }
     
@@ -67,6 +63,7 @@ export const Login = () => {
                     </p>
                 </fieldset>
             </Zoom>
+            <Toaster position='bottom-center'/>
         </section>
     )
 };

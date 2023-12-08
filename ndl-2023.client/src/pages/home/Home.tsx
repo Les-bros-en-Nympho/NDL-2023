@@ -1,8 +1,8 @@
 import {Fade} from "react-awesome-reveal";
 import {Link} from "react-router-dom";
 import i18n from "../../i18n.ts";
-import {t} from "i18next";
 import '../../styles/home/home.scss'
+
 
 export const Home = () => {
     const currentLocale = i18n.language;
@@ -14,6 +14,7 @@ export const Home = () => {
         ["Hugo WENDJANEH", "https://github.com/Furiza31"],
         ["Vincent MIQUEU-DENJEAN", "https://github.com/RepliKode"]
     ];
+    const {t} = i18n;
 
     return (
         <>
@@ -21,15 +22,15 @@ export const Home = () => {
                 <div className="title">
                     <Fade cascade direction='up' duration={100}>
                         <h1>
-                            <span className="colored">Funnier way</span> to learn about <span className="colored">climate</span>
+                            <span className="colored">{t('Funnier_way')}</span> {t("to_learn_about")} <span className="colored">{t("climate")}</span>
                         </h1>
                     </Fade>
                 </div>
                 <div className="desc">
                     <Fade cascade direction='up' duration={300}>
-                        <h2><span className="colored">EcoQuizz</span> is an <span className="colored">aesthetic True or False game</span> about climate changing with <span className="colored">scoring</span>.
+                        <h2><span className="colored">{t("EcoQuizz")}</span> {t("is_an")} <span className="colored">{t("aesthetic_True_or_False_game")}</span> {t('about_climate_changing_with')} <span className="colored">{t('scoring')}</span>.
                         </h2>
-                        <p>Developed by {developers.map((developer) => (
+                        <p> {t('Developed_by')} {developers.map((developer) => (
                             <Link to={developer[1]} target='_blank' className="link">{developer[0]}</Link>
                         ))}</p>
                     </Fade>

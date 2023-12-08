@@ -14,6 +14,16 @@ export const Header = () => {
     const mobileBreakpoint = 1450;
     const currentLocale = i18n.language;
     const [isLogged, setIsLogged] = useState<boolean>(false);
+
+    const getNextLanguage = () => {
+        const index = i18n.languages.indexOf(i18n.language);
+        return i18n.languages[(index + 1) % i18n.languages.length];
+    }
+
+    const changeLocal = () => {
+        handleToggle();
+        window.location.href = `/${getNextLanguage()}`;
+    }
     
     const handleToggle = () => {
         setIsToggled(!isToggled);
@@ -53,15 +63,16 @@ export const Header = () => {
             </div>
             <nav>
             <Fade cascade direction='up' duration={200}>
-                <Link to={`/${currentLocale}`}><i className="fa-solid fa-house"></i> {t('header_home')} </Link>
-                <Link to={`/${currentLocale}/quizz`}><i className="fa-solid fa-circle-question"></i> {t('header_quizz')} </Link>
-                <Link to={`/${currentLocale}/news`}><i className="fa-solid fa-newspaper"></i> {t('header_news')} </Link>
-                <Link to={`/${currentLocale}/leaderboard`}><i className="fa-solid fa-trophy"></i>{t('header_leaderboard')}</Link>
-                {!isLogged && <Link to={`/${currentLocale}/login`}><i className="fa-solid fa-right-to-bracket"></i>{t('header_login')}</Link>}
+                <Link to={`/${currentLocale}`} onClick={handleToggle}><i className="fa-solid fa-house"></i> {t('header_home')} </Link>
+                <Link to={`/${currentLocale}/quizz`} onClick={handleToggle}><i className="fa-solid fa-circle-question"></i> {t('header_quizz')} </Link>
+                <Link to={`/${currentLocale}/leaderboard`} onClick={handleToggle}><i className="fa-solid fa-trophy"></i>{t('header_leaderboard')}</Link>
+                {!isLogged && <Link to={`/${currentLocale}/login`} onClick={handleToggle}><i className="fa-solid fa-right-to-bracket"></i>{t('header_login')}</Link>}
                 {isLogged && <button onClick={() => {
                     localStorage.removeItem('token');
                     setIsLogged(false);
+                    handleToggle();
                 }}><i className="fa-solid fa-right-to-bracket"></i>{t('header_logout')}</button>}
+                <button onClick={changeLocal}><i className="fa-solid fa-globe"></i>{getNextLanguage()}</button>
             </Fade>
             </nav>
             <div className='toggle' onClick={handleToggle}>

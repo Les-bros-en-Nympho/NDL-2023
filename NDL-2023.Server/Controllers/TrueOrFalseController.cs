@@ -31,7 +31,7 @@ public class TrueOrFalseController : ControllerBase
     {
         var last_id = HttpContext.Session.GetString(KeyID);
         var trueOrFalse = _trueOrFalseService.GetRandomTrueOrFalse(last_id is not null ? Guid.Parse(last_id) : null);
-        HttpContext.Session.SetString(KeyID, trueOrFalse.ToString());
+        HttpContext.Session.SetString(KeyID, trueOrFalse.id.ToString());
 
         long startTime = _timerService.GetStartTime();
         HttpContext.Session.SetString(KeyTimer, startTime.ToString());
@@ -47,9 +47,9 @@ public class TrueOrFalseController : ControllerBase
 
         long startTime = long.Parse(timer_in_context);
         long stopTime = _timerService.GetStopTime();
-        double milliTimeSpent = startTime - stopTime;
+        double timeSpent = stopTime - startTime;
 
-        return (int)Math.Round(milliTimeSpent);
+        return (int)timeSpent;
     }
 
     [AllowAnonymous]

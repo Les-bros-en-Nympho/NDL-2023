@@ -20,10 +20,10 @@ public class TrueOrFalseService: ITrueOrFalseService
 
         TrueOrFalse? randomElement = null;
         bool success = false;
-        while (success)
+        while (!success)
         {
             randomElement = _context.TrueOrFalses.ElementAt(new Random().Next(1, nb));
-            success = lastTrueOrFalseId is null || randomElement.id.Equals(lastTrueOrFalseId);
+            success = lastTrueOrFalseId is null || !randomElement.id.Equals(lastTrueOrFalseId);
         }
 
         return new TrueOrFalseSendAdapter

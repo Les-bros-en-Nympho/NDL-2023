@@ -30,9 +30,10 @@
       padding: 10px;
       border-bottom: 1px solid #ecf0f1;
   
-      .medal {
-        width: 2em; // Adapter la taille des médailles en fonction de la taille du tableau des scores
-        height: 2em;
+      img {
+        position: relative;
+        width: 50px; // Adapter la taille des médailles en fonction de la taille du tableau des scores
+        height: 50px;
         margin-right: 10px;
       }
     }

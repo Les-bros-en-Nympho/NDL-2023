@@ -14,7 +14,7 @@ export const Register = () => {
                     <legend>{t('register_title')}</legend>
 
                     <form method="post">
-                        <Fade duration={100} cascade direction='up'>
+                        <Fade duration={85} cascade direction='up'>
 
                             <label htmlFor="name">{t('register_username')}</label>
                             <input type="text" name="name" id="name" placeholder={t('register_username_placeholder')} />

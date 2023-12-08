@@ -10,5 +10,7 @@
     "login_password": "Password",
     "login_submit": "Login",
     "login_email_placeholder": "Enter your email",
-    "login_password_placeholder": "Enter your password"
+    "login_password_placeholder": "Enter your password",
+    "login_register": "Not registered yet ? Click ",
+    "login_register_link": "here"
 }

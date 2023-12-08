@@ -11,6 +11,7 @@ export const Header = () => {
     const [isScrolled, setIsScrolled] = useState<boolean>(window.scrollY > 30);
     const [isToggled, setIsToggled] = useState<boolean>(false);
     const mobileBreakpoint = 1450;
+    const currentLocale = i18n.language;
     
     const handleToggle = () => {
         setIsToggled(!isToggled);
@@ -44,11 +45,11 @@ export const Header = () => {
             </div>
             <nav>
             <Fade cascade direction='up' duration={200}>
-                <Link to=""><i className="fa-solid fa-house"></i> {t('header_home')} </Link>
-                <Link to="quizz"><i className="fa-solid fa-circle-question"></i> {t('header_quizz')} </Link>
-                <Link to="news"><i className="fa-solid fa-newspaper"></i> {t('header_news')} </Link>
-                <Link to="leaderboard"><i className="fa-solid fa-trophy"></i>{t('header_leaderboard')}</Link>
-                <Link to="login"><i className="fa-solid fa-right-to-bracket"></i>{t('header_login')}</Link>
+                <Link to={`/${currentLocale}`}><i className="fa-solid fa-house"></i> {t('header_home')} </Link>
+                <Link to={`/${currentLocale}/quizz`}><i className="fa-solid fa-circle-question"></i> {t('header_quizz')} </Link>
+                <Link to={`/${currentLocale}/news`}><i className="fa-solid fa-newspaper"></i> {t('header_news')} </Link>
+                <Link to={`/${currentLocale}/leaderboard`}><i className="fa-solid fa-trophy"></i>{t('header_leaderboard')}</Link>
+                <Link to={`/${currentLocale}/login`}><i className="fa-solid fa-right-to-bracket"></i>{t('header_login')}</Link>
             </Fade>
             </nav>
             <div className='toggle' onClick={handleToggle}>

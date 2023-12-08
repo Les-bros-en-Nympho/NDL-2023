@@ -1,14 +1,14 @@
 import i18n from '../../i18n';
-import '../../styles/login/login.scss'
+import '../../styles/register/register.scss'
 import { Fade } from 'react-awesome-reveal';
 import { Link } from 'react-router-dom';
 
-export const Login = () => {
+export const Register = () => {
     const { t } = i18n;
     const currentLocale = i18n.language;
 
     return (
-        <section id="login">
+        <section id="register">
             <Fade duration={200}>
                 <fieldset>
                     <legend>{t('login_title')}</legend>
@@ -25,7 +25,7 @@ export const Login = () => {
                         </Fade>
                     </form>
                     <p>
-                        {t('login_register')} <Link to={`/${currentLocale}/register`}>{t('login_register_link')}</Link>
+                        {t('login_register')} <Link to={`/${currentLocale}/login`}>{t('login_register_link')}</Link>
                     </p>
                 </fieldset>
             </Fade>

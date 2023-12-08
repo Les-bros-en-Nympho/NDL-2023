@@ -28,7 +28,6 @@ export const Login = () => {
                     toast.error(response.message);
                 } else {
                     toast.success(t('register_success'));
-                    localStorage.setItem('token', response.token);
                     navigate(`/${currentLocale}/`);
                 }
             });

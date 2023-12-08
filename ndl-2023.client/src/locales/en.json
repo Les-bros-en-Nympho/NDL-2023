@@ -26,5 +26,6 @@
     "register_login": "Already registered ? Click ",
     "register_login_link": "here",
     "register_success": "You have been successfully registered !",
-    "register_error": "An error occured during the registration process."
+    "register_error": "An error occured during the registration process.",
+    "register_passwords_match": "Passwords do not match."
 }

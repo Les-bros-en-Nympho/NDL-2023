@@ -10,7 +10,6 @@ export const Register = () => {
     const { t } = i18n;
     const currentLocale = i18n.language;
     const api = API.getInstance();
-    const [loading, setLoading] = useState(false);
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [cpassword, setCPassword] = useState('');
@@ -18,23 +17,24 @@ export const Register = () => {
 
     const register = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        setLoading(true);
+        if (password !== cpassword) {
+            toast.error(t('register_passwords_match'));
+            return;
+        }
         try {
             api.post('/Auth/Register', {
                 username,
                 email,
                 password
             }).then((response) => {
-                // if (response?.message) {
-                //     toast.error(response.message);
-                // } else {
-                //     toast.success(t('register_success'));
-                // }
+                if (response?.message) {
+                    toast.error(response.message);
+                } else {
+                    toast.success(t('register_success'));
+                }
             });
-            setLoading(false);
         } catch (error) {
             toast.error(t('register_error'));
-            setLoading(false);
         }
     }
 
@@ -44,7 +44,7 @@ export const Register = () => {
                 <fieldset>
                     <legend>{t('register_title')}</legend>
 
-                    <form method="post">
+                    <form method="post" onSubmit={register}>
                         <Fade duration={85} cascade direction='up'>
 
                             <label htmlFor="name">{t('register_username')}</label>
@@ -79,7 +79,7 @@ export const Register = () => {
                     </p>
                 </fieldset>
             </Zoom>
-            <Toaster />
+            <Toaster position='bottom-center'/>
         </section>
     )
 };

@@ -1,5 +1,5 @@
 {
-    "title": "QuizzEco",
+    "title": "EcoQuizz",
     "header_home": "Home",
     "header_quizz": "Quizz",
     "header_news": "News",
@@ -12,5 +12,6 @@
     "login_email_placeholder": "Enter your email",
     "login_password_placeholder": "Enter your password",
     "login_register": "Not registered yet ? Click ",
-    "login_register_link": "here"
+    "login_register_link": "here",
+    "access_the_quizz": "Access the quizz"
 }

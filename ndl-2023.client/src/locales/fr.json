@@ -12,5 +12,6 @@
     "login_email_placeholder": "Entrer votre email",
     "login_password_placeholder": "Entrer votre mot de passe",
     "login_register": "Pas encore de compte ? Vous pouvez vous inscrire",
-    "login_register_link": "ici"
+    "login_register_link": "ici",
+    "access_the_quizz": "Accéder au jeu"
 }

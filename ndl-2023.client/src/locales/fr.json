@@ -28,5 +28,6 @@
     "register_login_link": "ici",
     "register_success": "Votre compte a bien été créé ! Vous pouvez vous connecter",
     "register_error": "Une erreur est survenue lors de la création de votre compte",
-    "register_passwords_match": "Les mots de passe ne correspondent pas"
+    "register_passwords_match": "Les mots de passe ne correspondent pas",
+    "header_logout": "Déconnexion"
 }

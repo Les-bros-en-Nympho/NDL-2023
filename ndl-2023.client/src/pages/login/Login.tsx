@@ -7,6 +7,7 @@ import { LOCALSTORAGE } from '../../services/LOCALSTORAGE.ts';
 import { useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import { useNavigate } from 'react-router';
+import { DISPATCHER } from '../../services/DISPATCHER.ts';
 
 export const Login = () => {
     const { t } = i18n;
@@ -29,6 +30,7 @@ export const Login = () => {
                 } else {
                     toast.success(t('register_success'));
                     localStorage.setItem("token", response.token);
+                    DISPATCHER.dispatch('login', response.token);
                     navigate(`/${currentLocale}/`);
                 }
             });

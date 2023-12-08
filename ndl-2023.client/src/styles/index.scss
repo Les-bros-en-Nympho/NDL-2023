@@ -7,6 +7,8 @@
     margin: 0px;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    font-size: $font-size;
+    color: $text;
 }
 
 body {
@@ -16,4 +18,15 @@ body {
 
 header, footer, section {
     padding: 0px $center-margin;
+}
+
+@media (max-width: 1250px) {
+    header, footer, section {
+        padding: 0px $mobile-center-margin;
+    }
+}
+
+a, input, button {
+    text-decoration: none;
+    outline: none;
 }

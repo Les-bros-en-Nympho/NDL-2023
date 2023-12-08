@@ -1,22 +1,61 @@
 import i18n from '../../i18n';
 import '../../styles/header/header.scss';
+import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { debounce } from '../../utils/debouce';
+import { Fade } from 'react-awesome-reveal';
 
 export const Header = () => {
     const { t } = i18n
+
+    const [isScrolled, setIsScrolled] = useState<boolean>(window.scrollY > 30);
+    const [isToggled, setIsToggled] = useState<boolean>(false);
+    const mobileBreakpoint = 1300;
+    
+    const handleToggle = () => {
+        setIsToggled(!isToggled);
+    }
+
+    const handleScroll = () => {
+        if (window.scrollY > 30) setIsScrolled(true);
+        else setIsScrolled(false);
+    }
+
+    const handleResize = debounce(() => {
+            if (window.innerWidth > mobileBreakpoint) setIsToggled(false);
+        }, 300);
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll as EventListener)
+        window.addEventListener('resize', handleResize as EventListener)
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+            window.removeEventListener('resize', handleResize as EventListener)
+        }
+    })
     
     return (
-        <header>
+        <header className={`${isScrolled ? 'scrolled' : ''} ${isToggled ? 'toggled' : ''}`}>
             <div className="title">
-                <img src="/images/logo.png" alt="Logo" />
-                <h1>{ t('title') }</h1>
+                <Link to="">
+                    <img src="/images/logo.png" alt="Logo" />
+                    <h1>{ t('title') }</h1>
+                </Link>
             </div>
             <nav>
-                <a href="">Home</a>
-                <a href="">Quizz</a>
-                <a href="">News</a>
-                <a href="">Leader board</a>
-                <a href="">Login</a>
+            <Fade cascade direction='up' duration={200}>
+                <Link to=""><i className="fa-solid fa-house"></i>Home</Link>
+                <Link to=""><i className="fa-solid fa-circle-question"></i>Quizz</Link>
+                <Link to=""><i className="fa-solid fa-newspaper"></i>News</Link>
+                <Link to=""><i className="fa-solid fa-trophy"></i>Leader board</Link>
+                <Link to=""><i className="fa-solid fa-right-to-bracket"></i>Login</Link>
+            </Fade>
             </nav>
+            <div className='toggle' onClick={handleToggle}>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </header>
     );
 }

@@ -46,15 +46,18 @@ export default defineConfig({
     },
     server: {
         proxy: {
-            '^/weatherforecast': {
-                target: 'https://localhost:7012/',
-                secure: false
-            }
+          '/api': {
+            target: 'http://localhost:5043', // Mettez l'URL de votre API sans le chemin spécifique
+            secure: false,
+            changeOrigin: true,
+            rewrite: (path) => path.replace(/^\/api/, '/api') // Ajoutez le chemin spécifique ici si nécessaire
+          }
         },
         port: 5173,
         https: {
-            key: fs.readFileSync(keyFilePath),
-            cert: fs.readFileSync(certFilePath),
+          key: fs.readFileSync(keyFilePath),
+          cert: fs.readFileSync(certFilePath),
         }
-    }
+      }
+      
 })

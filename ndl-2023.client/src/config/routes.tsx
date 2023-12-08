@@ -3,6 +3,7 @@ import { Home } from '../pages/home/Home';
 import { Navigate, RouteObject } from 'react-router-dom';
 import { Login } from '../pages/login/Login';
 import { Register } from '../pages/register/Register';
+import { Leaderboard } from '../pages/leaderboard/Leaderboard';
 
 export const routes = [
     {
@@ -39,6 +40,10 @@ export const routes = [
                     {
                         path: 'register',
                         element: <Register />
+                    },
+                    {
+                        path: 'leaderboard',
+                        element: <Leaderboard />
                     }
                 ]
             },

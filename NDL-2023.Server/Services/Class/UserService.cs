@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using Microsoft.AspNetCore.Http;
+﻿using System.Security.Claims;
 using Microsoft.AspNetCore.Identity;
 using NDL_2023.Server.Data;
 using NDL_2023.Server.Data.Tables;
@@ -64,11 +60,6 @@ public class UserService: IUserService
         return registered_user;
     }
 
-    public User? ResetPassword(Guid id)
-    {
-        throw new NotImplementedException();
-    }
-
     public User? GetCurrentUser(HttpContext httpContext)
     {
         ClaimsIdentity? identity = httpContext.User.Identity as ClaimsIdentity;
@@ -83,8 +74,50 @@ public class UserService: IUserService
             null;
     }
 
-    public List<User> GetLeaderBoard()
+    private double GetFactorScoreTimeSpent(int millisecondsSpended)
     {
-        throw new NotImplementedException();
+        double time_max = 60 * 1000;
+
+        return millisecondsSpended > time_max ? 0 :
+                                                time_max - millisecondsSpended;
+    }
+
+    private double CalcScore(int millisecondsSpended, int difficulty)
+    {
+        double score = 40 + new Random().Next(-10, 20);
+
+        if (millisecondsSpended < 400)
+            score = -score;
+        else
+            score += GetFactorScoreTimeSpent(millisecondsSpended) / 1000;
+
+        if (difficulty > 0)
+            score *= double.Parse($"1.{difficulty}");
+
+        return score;
+    }
+
+    public double GetFakeScore(int millisecondsSpended, int difficulty)
+    {
+        return CalcScore(millisecondsSpended, difficulty);
+    }
+
+    public double UpdateScore(Guid id, int millisecondsSpended, int difficulty)
+    {
+        User user = _context.Users.First(u => u.id == id);
+
+        double score = CalcScore(millisecondsSpended, difficulty);
+
+        user.score += score;
+
+        _context.Update(user);
+        _context.SaveChanges();
+
+        return score;
+    }
+
+    public List<User> GetLeaderBoard(int nbUsers)
+    {
+        return _context.Users.OrderByDescending(user => user.score).Take(nbUsers).ToList();
     }
 }

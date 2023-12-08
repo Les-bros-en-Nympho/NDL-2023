@@ -24,5 +24,8 @@
     "register_password_placeholder": "Enter your password",
     "register_password_confirm_placeholder": "Confirm your password",
     "register_login": "Already registered ? Click ",
-    "register_login_link": "here"
+    "register_login_link": "here",
+    "register_success": "You have been successfully registered !",
+    "register_error": "An error occured during the registration process.",
+    "register_passwords_match": "Passwords do not match."
 }

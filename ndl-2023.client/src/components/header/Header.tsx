@@ -45,10 +45,10 @@ export const Header = () => {
             <nav>
             <Fade cascade direction='up' duration={200}>
                 <Link to=""><i className="fa-solid fa-house"></i>Home</Link>
-                <Link to=""><i className="fa-solid fa-circle-question"></i>Quizz</Link>
-                <Link to=""><i className="fa-solid fa-newspaper"></i>News</Link>
-                <Link to=""><i className="fa-solid fa-trophy"></i>Leader board</Link>
-                <Link to=""><i className="fa-solid fa-right-to-bracket"></i>Login</Link>
+                <Link to="quizz"><i className="fa-solid fa-circle-question"></i>Quizz</Link>
+                <Link to="news"><i className="fa-solid fa-newspaper"></i>News</Link>
+                <Link to="leaderboard"><i className="fa-solid fa-trophy"></i>Leader board</Link>
+                <Link to="login"><i className="fa-solid fa-right-to-bracket"></i>Login</Link>
             </Fade>
             </nav>
             <div className='toggle' onClick={handleToggle}>

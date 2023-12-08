@@ -27,7 +27,7 @@ public class TrueOrFalseController : ControllerBase
     [AllowAnonymous]
     [HttpGet]
     [Route("random")]
-    public string GetRandomTrueOrFalse()
+    public ActionResult GetRandomTrueOrFalse()
     {
         var last_id = HttpContext.Session.GetString(KeyID);
         var trueOrFalse = _trueOrFalseService.GetRandomTrueOrFalse(last_id is not null ? Guid.Parse(last_id) : null);
@@ -36,7 +36,7 @@ public class TrueOrFalseController : ControllerBase
         long startTime = _timerService.GetStartTime();
         HttpContext.Session.SetString(KeyTimer, startTime.ToString());
 
-        return trueOrFalse.statement;
+        return new OkObjectResult(new { question = trueOrFalse.statement }) ;
     }
 
     private int TimeSpent()

@@ -4,7 +4,7 @@ import '../../styles/leaderboard/leaderboard.scss';
 import { Link } from 'react-router-dom';
 
 import { API } from "../../services/API";
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 export const Leaderboard = () => {
 

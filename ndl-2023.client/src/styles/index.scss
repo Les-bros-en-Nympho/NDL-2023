@@ -16,11 +16,11 @@ body {
     color: $text;
 }
 
-header, footer, main {
+header, footer, section {
     padding: 0px $center-margin;
 }
 
-@media (max-width: 1250px) {
+@media (max-width: 1450px) {
     header, footer, section {
         padding: 0px $mobile-center-margin;
     }

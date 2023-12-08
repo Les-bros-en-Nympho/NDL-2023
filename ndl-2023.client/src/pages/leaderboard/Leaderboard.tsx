@@ -3,7 +3,17 @@
 import '../../styles/leaderboard/leaderboard.scss';
 import { Link } from 'react-router-dom';
 
+import { useEffect } from "react"
+import { API } from "../../services/API"
+
 export const Leaderboard = () => {
+
+    useEffect(() => {
+        API.getInstance().get("/leaderboard/5").then((res) => {
+            console.log(res)
+        });
+    }, [])
+
     return (
         <div className="leaderboard">
         <div className="leaderboard-header">Leaderboard</div>

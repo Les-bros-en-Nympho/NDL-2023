@@ -30,4 +30,19 @@ public class ScoreController : ControllerBase
     {
         return _userService.GetLeaderBoard(nb_players);
     }
+
+    [AllowAnonymous]
+    [HttpGet]
+    [Route("get_current_user_score")]
+    public ActionResult GetCurrentUserScore()
+    {
+        try
+        {
+            return new OkObjectResult(new { score = _userService.GetCurrentUser(HttpContext).score });
+        }
+        catch (Exception ex)
+        {
+            return new OkObjectResult(new { score = 0 });
+        }
+    }
 }

@@ -4,6 +4,7 @@
 .box{
     display: flex;
     justify-content: center;
+    flex-direction: column;
     position: absolute;
     top: 20%;
     left: 15%;
@@ -11,6 +12,12 @@
     background-color: darken($background, 2%);
     border-radius: 20px;
     padding: 2%;
+
+    div.yesno {
+        position: relative;
+        display: flex;
+        flex-direction: row nowrap;
+        justify-content: space-between;
 
     .button {
         background: $primary;
@@ -28,7 +35,12 @@
             transform: scale(1.1);
         }
     }
+}
 
+}
+
+.response {
+    color : darkgreen;
 }
 
 

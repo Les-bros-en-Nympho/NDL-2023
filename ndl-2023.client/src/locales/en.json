@@ -2,7 +2,6 @@
     "title": "EcoQuizz",
     "header_home": "Home",
     "header_quizz": "Quizz",
-    "header_news": "News",
     "header_leaderboard": "Leaderboard",
     "header_login": "Login",
     "login_title": "Login",
@@ -29,5 +28,14 @@
     "register_success": "You have been successfully registered !",
     "register_error": "An error occured during the registration process.",
     "register_passwords_match": "Passwords do not match.",
-    "header_logout": "Logout"
+    "header_logout": "Logout",
+    "Funnier_way": "Funnier way",
+    "to_learn_about": "to learn about",
+    "climate": "climate",
+    "EcoQuizz": "EcoQuizz",
+    "is_an": "is an",
+    "aesthetic_True_or_False_game": "aesthetic True or False game",
+    "about_climate_changing_with": "about climate changing with",
+    "scoring": "scoring",
+    "Developed_by": "Developed by"
 }

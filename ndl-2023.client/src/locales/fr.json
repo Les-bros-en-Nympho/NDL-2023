@@ -2,7 +2,6 @@
     "title": "EcoQuizz",
     "header_home": "Accueil",
     "header_quizz": "Quizz",
-    "header_news": "Actualités",
     "header_leaderboard": "Classement",
     "header_login": "Connexion",
     "login_title": "Connexion",
@@ -29,5 +28,14 @@
     "register_success": "Votre compte a bien été créé ! Vous pouvez vous connecter",
     "register_error": "Une erreur est survenue lors de la création de votre compte",
     "register_passwords_match": "Les mots de passe ne correspondent pas",
-    "header_logout": "Déconnexion"
+    "header_logout": "Déconnexion",
+    "Funnier_way": "Une façon plus amusante",
+    "to_learn_about": "d'apprendre sur",
+    "climate": "le climat",
+    "EcoQuizz": "EcoQuizz",
+    "is_an": "est un",
+    "aesthetic_True_or_False_game": "jeu esthétique Vrai ou Faux",
+    "about_climate_changing_with": "à propos du changement climatique avec",
+    "scoring": "score",
+    "Developed_by": "Développé par"
 }

@@ -125,7 +125,7 @@ header div.toggle {
     }
 }
 
-@media (max-width: 1250px) {
+@media (max-width: 1450px) {
     header div.toggle {
         display: block;
     }
@@ -175,5 +175,9 @@ header div.toggle {
 
     header nav a:hover {
         background-color: $secondary;
+    }
+
+    header div.title a h1 {
+        display: none;
     }
 }

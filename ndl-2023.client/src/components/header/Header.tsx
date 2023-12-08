@@ -10,7 +10,7 @@ export const Header = () => {
 
     const [isScrolled, setIsScrolled] = useState<boolean>(window.scrollY > 30);
     const [isToggled, setIsToggled] = useState<boolean>(false);
-    const mobileBreakpoint = 1300;
+    const mobileBreakpoint = 1450;
     
     const handleToggle = () => {
         setIsToggled(!isToggled);
@@ -44,11 +44,11 @@ export const Header = () => {
             </div>
             <nav>
             <Fade cascade direction='up' duration={200}>
-                <Link to=""><i className="fa-solid fa-house"></i>Home</Link>
-                <Link to="quizz"><i className="fa-solid fa-circle-question"></i>Quizz</Link>
-                <Link to="news"><i className="fa-solid fa-newspaper"></i>News</Link>
-                <Link to="leaderboard"><i className="fa-solid fa-trophy"></i>Leader board</Link>
-                <Link to="login"><i className="fa-solid fa-right-to-bracket"></i>Login</Link>
+                <Link to=""><i className="fa-solid fa-house"></i> {t('header_home')} </Link>
+                <Link to="quizz"><i className="fa-solid fa-circle-question"></i> {t('header_quizz')} </Link>
+                <Link to="news"><i className="fa-solid fa-newspaper"></i> {t('header_news')} </Link>
+                <Link to="leaderboard"><i className="fa-solid fa-trophy"></i>{t('header_leaderboard')}</Link>
+                <Link to="login"><i className="fa-solid fa-right-to-bracket"></i>{t('header_login')}</Link>
             </Fade>
             </nav>
             <div className='toggle' onClick={handleToggle}>

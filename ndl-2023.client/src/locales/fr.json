@@ -1,3 +1,14 @@
 {
-    "title": "EcoQuizz"
+    "title": "EcoQuizz",
+    "header_home": "Accueil",
+    "header_quizz": "Quizz",
+    "header_news": "Actualités",
+    "header_leaderboard": "Classement",
+    "header_login": "Connexion",
+    "login_title": "Connexion",
+    "login_email": "Email",
+    "login_password": "Mot de passe",
+    "login_submit": "Se connecter",
+    "login_email_placeholder": "Entrer votre email",
+    "login_password_placeholder": "Entrer votre mot de passe"
 }

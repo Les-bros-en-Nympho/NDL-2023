@@ -2,7 +2,8 @@ import i18n from '../../i18n';
 import '../../styles/login/login.scss'
 import { Fade, Zoom } from 'react-awesome-reveal';
 import { Link } from 'react-router-dom';
-import {API} from "../../services/API.ts";
+import { API } from "../../services/API.ts";
+import { LOCALSTORAGE } from '../../services/LOCALSTORAGE.ts';
 import { useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import { useNavigate } from 'react-router';
@@ -12,6 +13,7 @@ export const Login = () => {
     const currentLocale = i18n.language;
     const navigate = useNavigate();
     const api = API.getInstance();
+    const localStorage = LOCALSTORAGE.getInstance();
     const [loading, setLoading] = useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -28,6 +30,7 @@ export const Login = () => {
                     toast.error(response.message);
                 } else {
                     toast.success(t('register_success'));
+                    localStorage.setItem("token", response.token);
                     navigate(`/${currentLocale}/`);
                 }
             });

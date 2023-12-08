@@ -9,7 +9,7 @@ export const QuizzComponent = () => {
     function ReloadRandom(){
         API.getInstance().get("/TrueOrFalse/random").then((response) => {
             if(response != null)
-                setStatement(response['question']);
+                setStatement((response as never)['question']);
         });
     }
     const onComponentMount = () => {
@@ -25,7 +25,7 @@ export const QuizzComponent = () => {
         API.getInstance().get(`/TrueOrFalse/guess/${responseP}`).then((response) => {
             console.log(response);
             if(response != null)
-                setResponse(response["explaination"]);
+                setResponse((response as never)["explaination"]);
            json = response;
         });
         ReloadRandom();

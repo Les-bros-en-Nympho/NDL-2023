@@ -11,21 +11,28 @@ export const Register = () => {
         <section id="register">
             <Fade duration={200}>
                 <fieldset>
-                    <legend>{t('login_title')}</legend>
+                    <legend>{t('register_title')}</legend>
 
                     <form method="post">
                         <Fade duration={100} cascade direction='up'>
-                            <label htmlFor="email">{t('login_email')}</label>
-                            <input type="email" name="email" id="email" placeholder={t('login_email_placeholder')} />
 
-                            <label htmlFor="password">{t('login_password')}</label>
-                            <input type="password" name="password" id="password" placeholder={t('login_password_placeholder')} />
+                            <label htmlFor="name">{t('register_username')}</label>
+                            <input type="text" name="name" id="name" placeholder={t('register_username_placeholder')} />
 
-                            <button type="submit">{t('login_submit')}</button>
+                            <label htmlFor="email">{t('register_email')}</label>
+                            <input type="email" name="email" id="email" placeholder={t('register_email_placeholder')} />
+
+                            <label htmlFor="password">{t('register_password')}</label>
+                            <input type="password" name="password" id="password" placeholder={t('register_password_placeholder')} />
+
+                            <label htmlFor="cpassword">{t('register_password_confirm')}</label>
+                            <input type="password" name="cpassword" id="cpassword" placeholder={t('register_password_confirm_placeholder')} />
+
+                            <button type="submit">{t('register_submit')}</button>
                         </Fade>
                     </form>
                     <p>
-                        {t('login_register')} <Link to={`/${currentLocale}/login`}>{t('login_register_link')}</Link>
+                        {t('register_login')} <Link to={`/${currentLocale}/login`}>{t('register_login_link')}</Link>
                     </p>
                 </fieldset>
             </Fade>

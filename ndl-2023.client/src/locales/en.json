@@ -12,5 +12,17 @@
     "login_email_placeholder": "Enter your email",
     "login_password_placeholder": "Enter your password",
     "login_register": "Not registered yet ? Click ",
-    "login_register_link": "here"
+    "login_register_link": "here",
+    "register_title": "Register",
+    "register_username": "Username",
+    "register_email": "Email",
+    "register_password": "Password",
+    "register_password_confirm": "Confirm password",
+    "register_submit": "Register",
+    "register_username_placeholder": "Enter your username",
+    "register_email_placeholder": "Enter your email",
+    "register_password_placeholder": "Enter your password",
+    "register_password_confirm_placeholder": "Confirm your password",
+    "register_login": "Already registered ? Click ",
+    "register_login_link": "here"
 }

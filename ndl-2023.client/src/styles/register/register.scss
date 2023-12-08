@@ -105,3 +105,17 @@ section#register {
         }
     }
 }
+
+@media (max-width: 1450px) {
+    section#register {
+        position: relative;
+        display: block;
+
+        fieldset {
+            position: relative;
+            left: 50%;
+            margin-top: 12%;
+            transform: translateX(-50%);
+        }
+    }
+}

@@ -13,6 +13,7 @@
     "login_password_placeholder": "Entrer votre mot de passe",
     "login_register": "Pas encore de compte ? Vous pouvez vous inscrire",
     "login_register_link": "ici",
+    "access_the_quizz": "Accéder au jeu",
     "register_title": "Inscription",
     "register_username": "Nom d'utilisateur",
     "register_email": "Email",
@@ -24,5 +25,9 @@
     "register_password_placeholder": "Entrer votre mot de passe",
     "register_password_confirm_placeholder": "Confirmer votre mot de passe",
     "register_login": "Déjà un compte ? Vous pouvez vous connecter",
-    "register_login_link": "ici"
+    "register_login_link": "ici",
+    "register_success": "Votre compte a bien été créé ! Vous pouvez vous connecter",
+    "register_error": "Une erreur est survenue lors de la création de votre compte",
+    "register_passwords_match": "Les mots de passe ne correspondent pas",
+    "header_logout": "Déconnexion"
 }

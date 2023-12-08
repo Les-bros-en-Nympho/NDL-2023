@@ -1,5 +1,5 @@
 {
-    "title": "QuizzEco",
+    "title": "EcoQuizz",
     "header_home": "Home",
     "header_quizz": "Quizz",
     "header_news": "News",
@@ -13,6 +13,7 @@
     "login_password_placeholder": "Enter your password",
     "login_register": "Not registered yet ? Click ",
     "login_register_link": "here",
+    "access_the_quizz": "Access the quizz",
     "register_title": "Register",
     "register_username": "Username",
     "register_email": "Email",
@@ -24,5 +25,9 @@
     "register_password_placeholder": "Enter your password",
     "register_password_confirm_placeholder": "Confirm your password",
     "register_login": "Already registered ? Click ",
-    "register_login_link": "here"
+    "register_login_link": "here",
+    "register_success": "You have been successfully registered !",
+    "register_error": "An error occured during the registration process.",
+    "register_passwords_match": "Passwords do not match.",
+    "header_logout": "Logout"
 }

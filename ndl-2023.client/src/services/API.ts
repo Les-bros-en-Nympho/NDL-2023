@@ -34,7 +34,7 @@ export class API {
      * @param body The body of the request
      * @returns The response of the API
      */
-    async post(path: string, body: JSON): Promise<JSON> {
+    async post(path: string, body: { [key: string]: any }): Promise<{ [key: string]: any }> {
         const response = await fetch(`${API.BASE_URL}${path}`, {
             method: 'POST',
             headers: {

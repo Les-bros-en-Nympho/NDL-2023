@@ -22,7 +22,5 @@ public class TimerController : ControllerBase
     [Route("set_start_time_to_session")]
     public void SetStartTimeToSession()
     {
-        long startTime = _timerService.GetStartTime();
-        HttpContext.Session.SetString(KeyTimer, startTime.ToString());
     }
 }

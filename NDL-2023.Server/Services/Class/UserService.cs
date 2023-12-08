@@ -82,7 +82,7 @@ public class UserService: IUserService
                                                 time_max - millisecondsSpended;
     }
 
-    private double CalcScore(int millisecondsSpended, int difficulty)
+    private double CalcScore(bool is_valid, int millisecondsSpended, int difficulty)
     {
         double score = 40 + new Random().Next(-10, 20);
 
@@ -91,22 +91,26 @@ public class UserService: IUserService
         else
             score += GetFactorScoreTimeSpent(millisecondsSpended) / 1000;
 
+        if (!is_valid)
+            score = score < 0 ? score - Math.Round(score / 2) :
+                                -score - Math.Round(score / 2);
+
         if (difficulty > 0)
             score *= double.Parse($"1.{difficulty}");
 
         return score;
     }
 
-    public double GetFakeScore(int millisecondsSpended, int difficulty)
+    public double GetFakeScore(bool is_valid, int millisecondsSpended, int difficulty)
     {
-        return CalcScore(millisecondsSpended, difficulty);
+        return CalcScore(is_valid, millisecondsSpended, difficulty);
     }
 
-    public double UpdateScore(Guid id, int millisecondsSpended, int difficulty)
+    public double UpdateScore(Guid id, bool is_valid, int millisecondsSpended, int difficulty)
     {
         User user = _context.Users.First(u => u.id == id);
 
-        double score = CalcScore(millisecondsSpended, difficulty);
+        double score = CalcScore(is_valid, millisecondsSpended, difficulty);
 
         user.score += score;
 
